@@ -21,6 +21,7 @@ const App = () => {
   };
 
   const onSubmitSearch = value => {
+    if (value === search) return;
     setSearch(value);
     setImages([]);
     setPage(1);
@@ -50,7 +51,7 @@ const App = () => {
         setIsLoading(false);
       });
   }, [page, search]);
-
+  console.log(search);
   return (
     <AppWrapper>
       <SearchBar setError={callError} setValue={onSubmitSearch} />
